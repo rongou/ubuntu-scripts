@@ -24,4 +24,4 @@ ninja
 
 cd ../../java
 mvn clean install -DPER_THREAD_DEFAULT_STREAM=ON -DUSE_GDS=ON -DskipTests
-cp target/cudf-0.19-SNAPSHOT-cuda11.jar /opt/rapids/cudf-0.19-SNAPSHOT-cuda11-"${1}"-ptds-gds.jar
+cp target/cudf-0.??-SNAPSHOT-cuda11.jar /opt/rapids/
