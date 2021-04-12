@@ -1,12 +1,24 @@
 #!/usr/bin/env bash
 
+usage()
+{
+  echo "usage: refresh.sh cudf_version"
+}
+
+if [ "$1" == "" ]; then
+  usage
+  exit 1
+fi
+
 set -ex
+
+CUDF_VERSION="$1"
 
 source "${HOME}/.miniconda3/etc/profile.d/conda.sh"
 conda deactivate
-git co branch-0.19
+git co branch-${CUDF_VERSION}
 git fetch upstream
-git rebase upstream/branch-0.19
+git rebase upstream/branch-${CUDF_VERSION}
 git push
 conda env create -f conda/environments/cudf_dev_cuda11.0.yml --force
 conda activate cudf_dev

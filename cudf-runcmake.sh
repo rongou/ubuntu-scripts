@@ -10,6 +10,8 @@ if [ "$1" == "" ]; then
   exit 1
 fi
 
+set -ex
+
 cmake -GNinja -S . -B build\
  -DCMAKE_INSTALL_PREFIX="$CONDA_PREFIX"\
  -DCMAKE_CUDA_ARCHITECTURES="${1}"\
@@ -18,5 +20,5 @@ cmake -GNinja -S . -B build\
  -DBUILD_BENCHMARKS=OFF\
  -DCUDF_USE_ARROW_STATIC=ON\
  -DBoost_USE_STATIC_LIBS=ON\
- -DUSE_NVTX=OFF\
+ -DUSE_NVTX=ON\
  -DPER_THREAD_DEFAULT_STREAM=ON
