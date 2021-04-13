@@ -1,0 +1,16 @@
+[user]
+	name = Rong Ou
+	email = rong.ou@gmail.com
+[credential]
+	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+[core]
+	editor = vi
+[pull]
+	ff = only
+[difftool]
+	prompt = false
