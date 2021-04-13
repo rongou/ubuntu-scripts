@@ -24,4 +24,8 @@ ninja
 
 cd ../../java
 mvn clean install -DPER_THREAD_DEFAULT_STREAM=ON -DUSE_GDS=ON -DskipTests
-cp target/cudf-0.??-SNAPSHOT-cuda11.jar /opt/rapids/
+if [[ -d /opt/rapids ]]; then
+  cp target/cudf-0.??-SNAPSHOT-cuda11.jar /opt/rapids/
+else
+  cp target/cudf-0.??-SNAPSHOT-cuda11.jar "${HOME}"/rapids/
+fi
