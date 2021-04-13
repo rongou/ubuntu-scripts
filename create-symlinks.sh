@@ -15,3 +15,7 @@ chmod +x "${HOME}"/src/cudf/cpp/runcmake.sh
 # For rmm:
 ln -sf "${DIR}"/rmm-runcmake.sh "${HOME}"/src/rmm/runcmake.sh
 chmod +x "${HOME}"/src/rmm/runcmake.sh
+
+# For CUDA setup:
+sudo ln -sf "${DIR}"/etc-profile.d-cuda.sh /etc/profile.d/cuda.sh
+sudo ln -sf "${DIR}"/etc-ld.so.conf.d-cuda.conf /etc/ld.so.conf.d/cuda.conf
