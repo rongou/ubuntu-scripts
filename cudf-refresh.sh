@@ -1,18 +1,8 @@
 #!/usr/bin/env bash
 
-usage()
-{
-  echo "usage: refresh.sh cudf_version"
-}
-
-if [ "$1" == "" ]; then
-  usage
-  exit 1
-fi
-
 set -ex
 
-CUDF_VERSION="$1"
+CUDF_VERSION="0.20"
 
 source "${HOME}/.miniconda3/etc/profile.d/conda.sh"
 conda deactivate
