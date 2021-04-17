@@ -16,14 +16,13 @@ PARALLEL_LEVEL="$(nproc)"
 export PARALLEL_LEVEL
 
 cd cpp
-rm -fr build/*
 ./runcmake.sh "${1}"
 
 cd build
 ninja
 
 cd ../../java
-mvn clean install -DPER_THREAD_DEFAULT_STREAM=ON -DUSE_GDS=ON -DskipTests
+mvn install -DPER_THREAD_DEFAULT_STREAM=ON -DUSE_GDS=ON -DskipTests
 if [[ -d /opt/rapids ]]; then
   cp target/cudf-0.??-SNAPSHOT-cuda11.jar /opt/rapids/
 else
