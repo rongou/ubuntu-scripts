@@ -22,3 +22,7 @@ sudo ln -sf "${DIR}"/etc-ld.so.conf.d-cuda.conf /etc/ld.so.conf.d/cuda.conf
 
 # For .gitconfig:
 ln -sf "${DIR}"/gitconfig "${HOME}"/.gitconfig
+
+# For Chia plotting:
+ln -sf "${DIR}"/chia-plot.sh "${HOME}"/src/chia-blockchain/chia-plot.sh
+chmod +x "${HOME}"/src/chia-blockchain/chia-plot.sh
