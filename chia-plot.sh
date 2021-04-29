@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-set -ex
 
 # Root directory for the tmp dir.
 tmpdir_root=/p3700/chia
