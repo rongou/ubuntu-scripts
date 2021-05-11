@@ -12,14 +12,14 @@ fi
 
 set -ex
 
-PARALLEL_LEVEL=$(( $(nproc) - 4 ))
+PARALLEL_LEVEL=$(nproc)
 export PARALLEL_LEVEL
 
 cd cpp
 ./runcmake.sh "${1}"
 
 cd build
-ninja -j ${PARALLEL_LEVEL}
+ninja
 
 cd ../../java
 mvn install -DPER_THREAD_DEFAULT_STREAM=ON -DUSE_GDS=ON -DskipTests
