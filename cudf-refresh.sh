@@ -14,4 +14,4 @@ if [[ -n "${DISPLAY}" ]]; then
 fi
 conda env create -f conda/environments/cudf_dev_cuda11.2.yml --force
 conda activate cudf_dev
-conda remove cmake --force -y
+#conda remove cmake --force -y
