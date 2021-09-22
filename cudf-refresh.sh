@@ -2,7 +2,7 @@
 
 set -ex
 
-CUDF_VERSION="21.10"
+CUDF_VERSION="21.12"
 
 source "${HOME}/.miniconda3/etc/profile.d/conda.sh"
 conda deactivate
@@ -14,4 +14,3 @@ if [[ -n "${DISPLAY}" ]]; then
 fi
 conda env create -f conda/environments/cudf_dev_cuda11.2.yml --force
 conda activate cudf_dev
-#conda remove cmake --force -y
