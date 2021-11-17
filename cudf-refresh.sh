@@ -2,7 +2,7 @@
 
 set -ex
 
-CUDF_VERSION="21.12"
+CUDF_VERSION="22.02"
 
 source "${HOME}/.miniconda3/etc/profile.d/conda.sh"
 conda deactivate
@@ -12,5 +12,5 @@ git rebase upstream/branch-"${CUDF_VERSION}"
 if [[ -n "${DISPLAY}" ]]; then
   git push
 fi
-conda env create -f conda/environments/cudf_dev_cuda11.2.yml --force
+conda env create -f conda/environments/cudf_dev_cuda11.5.yml --force
 conda activate cudf_dev
