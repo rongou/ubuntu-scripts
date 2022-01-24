@@ -2,7 +2,7 @@
 
 set -ex
 
-CUDF_VERSION="22.02"
+CUDF_VERSION="22.04"
 
 source "${HOME}/.miniconda3/etc/profile.d/conda.sh"
 conda deactivate
