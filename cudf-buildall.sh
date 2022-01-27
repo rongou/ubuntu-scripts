@@ -22,4 +22,4 @@ cd build
 ninja
 
 cd ../../java
-mvn install -DPER_THREAD_DEFAULT_STREAM=ON -DUSE_GDS=OFF -DskipTests
+mvn install -DPER_THREAD_DEFAULT_STREAM=ON -DUSE_GDS=OFF

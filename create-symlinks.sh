@@ -20,6 +20,10 @@ chmod +x "${HOME}"/src/rmm/runcmake.sh
 sudo ln -sf "${DIR}"/etc-profile.d-cuda.sh /etc/profile.d/cuda.sh
 sudo ln -sf "${DIR}"/etc-ld.so.conf.d-cuda.conf /etc/ld.so.conf.d/cuda.conf
 
+# For gcc setup:
+rm /usr/local/lib/x86_64-linux-gnu
+ln -s /usr/local/gcc-11.2.0/lib64 /usr/local/lib/x86_64-linux-gnu/
+
 # For .gitconfig:
 ln -sf "${DIR}"/gitconfig "${HOME}"/.gitconfig
 
