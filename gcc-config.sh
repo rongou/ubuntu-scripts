@@ -8,3 +8,13 @@ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 80 --slave /u
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 70 --slave /usr/bin/g++ g++ /usr/bin/g++-7 --slave /usr/bin/gcov gcov /usr/bin/gcov-7
 
 sudo update-alternatives --config gcc
+
+sudo update-alternatives\
+  --install /usr/bin/cc cc /usr/bin/gcc 30\
+  --slave /usr/bin/c++ c++ /usr/bin/g++\
+  --slave /usr/bin/ld ld /usr/bin/x86_64-linux-gnu-ld
+
+sudo update-alternatives\
+  --install /usr/bin/cc cc /usr/bin/clang 20\
+  --slave /usr/bin/c++ c++ /usr/bin/clang++\
+  --slave /usr/bin/ld ld /usr/bin/lld
