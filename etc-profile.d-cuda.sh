@@ -7,4 +7,4 @@ if [ -n "${PATH##*${cuda_bin_path}}" ] && [ -n "${PATH##*${cuda_bin_path}:*}" ];
 fi
 
 #export CUDA_DEVICE_ORDER=PCI_BUS_ID
-export CUDA_VISIBLE_DEVICES=1
+#export CUDA_VISIBLE_DEVICES=1
