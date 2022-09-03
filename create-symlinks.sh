@@ -24,6 +24,9 @@ sudo ln -sf "${DIR}"/etc-ld.so.conf.d-cuda.conf /etc/ld.so.conf.d/cuda.conf
 rm /usr/local/lib/x86_64-linux-gnu
 ln -s /usr/local/gcc-11.2.0/lib64 /usr/local/lib/x86_64-linux-gnu/
 
+# For ccache setup:
+sudo ln -sf "${DIR}"/etc-profile.d-ccache.sh /etc/profile.d/ccache.sh
+
 # For .gitconfig:
 ln -sf "${DIR}"/gitconfig "${HOME}"/.gitconfig
 
