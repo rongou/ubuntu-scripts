@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -ex
+
+cmake -GNinja -S . -B build\
+ -DGOOGLE_TEST=ON\
+ -DUSE_DMLC_GTEST=ON\
+ -DUSE_CUDA=ON\
+ -DBUILD_WITH_CUDA_CUB=ON\
+ -DGPU_COMPUTE_VER="70;75"\
+ -DUSE_NCCL=ON\
+ -DPLUGIN_FEDERATED=ON
