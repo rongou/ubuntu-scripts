@@ -3,7 +3,7 @@
 set -e
 
 # cmake
-CMAKE_VERSION=$(cmake --version | grep -Po "(?<=cmake version )(.*)")
+CMAKE_VERSION=$(cmake --version | grep -Po "(?<=cmake version )(.*)" || echo "0.0.0")
 echo "cmake installed version: ${CMAKE_VERSION}"
 CMAKE_RELEASE=$(wget -qO - https://api.github.com/repos/Kitware/CMake/releases/latest | jq -r '.tag_name|sub("^v"; "")')
 echo "cmake latest release: ${CMAKE_RELEASE}"
@@ -17,7 +17,7 @@ else
 fi
 
 # ccache
-CCACHE_VERSION=$(ccache --version | grep -Po "(?<=ccache version )(.*)")
+CCACHE_VERSION=$(ccache --version | grep -Po "(?<=ccache version )(.*)" || echo "0.0.0")
 echo "ccache installed version: ${CCACHE_VERSION}"
 CCACHE_RELEASE=$(wget -qO - https://api.github.com/repos/ccache/ccache/releases/latest | jq -r '.tag_name|sub("^v"; "")')
 echo "ccache latest release: ${CCACHE_RELEASE}"
@@ -31,7 +31,7 @@ else
 fi
 
 # ninja
-NINJA_VERSION=$(ninja --version)
+NINJA_VERSION=$(ninja --version || echo "0.0.0")
 echo "ninja installed version: ${NINJA_VERSION}"
 NINJA_RELEASE=$(wget -qO - https://api.github.com/repos/ninja-build/ninja/releases/latest | jq -r '.tag_name|sub("^v"; "")')
 echo "ninja latest release: ${NINJA_RELEASE}"
