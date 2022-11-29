@@ -2,7 +2,7 @@
 
 set -e
 
-compute="$(nvidia-smi --query-gpu=compute_cap --format=csv,noheader | sed 's/[.]//')"
+compute="$(nvidia-smi --query-gpu=compute_cap --format=csv,noheader | sed 's/[.]//' | paste -sd ';')"
 echo "Compute capability: ${compute}"
 
 cmake -GNinja -S . -B build\
