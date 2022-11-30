@@ -26,3 +26,7 @@ sudo ln -sf "${DIR}"/etc-ld.so.conf.d-cuda.conf /etc/ld.so.conf.d/cuda.conf
 
 # For .gitconfig:
 ln -sf "${DIR}"/gitconfig "${HOME}"/.gitconfig
+
+# For update-dev-tools:
+ln -sf "${DIR}"/update-dev-tools.sh /usr/local/bin/update-dev-tools.sh
+chmod +x /usr/local/bin/update-dev-tools.sh
