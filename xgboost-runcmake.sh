@@ -7,6 +7,7 @@ echo "Compute capability: ${compute}"
 
 cmake -GNinja -S . -B build\
  -DGOOGLE_TEST=ON\
+ -DUSE_DMLC_GTEST=ON\
  -DUSE_CUDA=ON\
  -DGPU_COMPUTE_VER="${compute}"\
  -DUSE_NCCL=ON\
