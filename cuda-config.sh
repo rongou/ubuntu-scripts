@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+sudo update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-12.1 1211
 sudo update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-12.0 1200
 sudo update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.8 1180
 sudo update-alternatives --install /usr/local/cuda cuda /usr/local/cuda-11.7 1170
