@@ -2,12 +2,20 @@
 
 set -e
 
+function compare_versions() {
+  if [[ $(printf '%s\n' "$1" "$2" | sort -V | head -n1) = "$1" ]]; then
+    return 0  # "$1" is less than or equal to "$2"
+  else
+    return 1  # "$1" is greater than "$2"
+  fi
+}
+
 # cmake
 CMAKE_VERSION=$(cmake --version | grep -Po "(?<=cmake version )(.*)" || echo "0.0.0")
 echo "cmake installed version: ${CMAKE_VERSION}"
 CMAKE_RELEASE=$(wget -qO - https://api.github.com/repos/Kitware/CMake/releases/latest | jq -r '.tag_name|sub("^v"; "")')
 echo "cmake latest release: ${CMAKE_RELEASE}"
-if [[ "$CMAKE_VERSION" ==  "$CMAKE_RELEASE" ]]; then
+if compare_versions "$CMAKE_RELEASE" "$CMAKE_VERSION"; then
   echo "cmake already is the latest release."
 else
   echo "Installing new cmake release ${CMAKE_RELEASE}..."
@@ -21,7 +29,7 @@ CCACHE_VERSION=$(ccache --version | grep -Po "(?<=ccache version )(.*)" || echo 
 echo "ccache installed version: ${CCACHE_VERSION}"
 CCACHE_RELEASE=$(wget -qO - https://api.github.com/repos/ccache/ccache/releases/latest | jq -r '.tag_name|sub("^v"; "")')
 echo "ccache latest release: ${CCACHE_RELEASE}"
-if [[ "$CCACHE_VERSION" ==  "$CCACHE_RELEASE" ]]; then
+if compare_versions "$CCACHE_RELEASE" "$CCACHE_VERSION"; then
   echo "ccache already is the latest release."
 else
   echo "Installing new ccache release ${CCACHE_RELEASE}..."
@@ -35,7 +43,7 @@ NINJA_VERSION=$(ninja --version || echo "0.0.0")
 echo "ninja installed version: ${NINJA_VERSION}"
 NINJA_RELEASE=$(wget -qO - https://api.github.com/repos/ninja-build/ninja/releases/latest | jq -r '.tag_name|sub("^v"; "")')
 echo "ninja latest release: ${NINJA_RELEASE}"
-if [[ "$NINJA_VERSION" ==  "$NINJA_RELEASE" ]]; then
+if compare_versions "$NINJA_RELEASE" "$NINJA_VERSION"; then
   echo "ninja already is the latest release."
 else
   echo "Installing new ninja release ${NINJA_RELEASE}..."

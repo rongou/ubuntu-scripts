@@ -12,3 +12,5 @@ cmake -GNinja -S . -B build\
  -DGPU_COMPUTE_VER="${compute}"\
  -DUSE_NCCL=ON\
  -DPLUGIN_FEDERATED=ON
+
+# -DCMAKE_BUILD_TYPE=Debug
