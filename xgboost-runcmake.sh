@@ -11,6 +11,7 @@ cmake -GNinja -S . -B build\
  -DUSE_CUDA=ON\
  -DGPU_COMPUTE_VER="${compute}"\
  -DUSE_NCCL=ON\
- -DPLUGIN_FEDERATED=ON
+ -DPLUGIN_FEDERATED=ON\
+ -DCMAKE_CXX_FLAGS="-Werror -Wall -Wextra -Wno-expansion-to-defined -Wno-maybe-uninitialized"
 
 # -DCMAKE_BUILD_TYPE=Debug
