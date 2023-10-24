@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 1220\
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-12 1230\
  --slave /usr/bin/g++ g++ /usr/bin/g++-12 --slave /usr/bin/gcov gcov /usr/bin/gcov-12
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 1130\
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-11 1140\
  --slave /usr/bin/g++ g++ /usr/bin/g++-11 --slave /usr/bin/gcov gcov /usr/bin/gcov-11
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 950\
+ --slave /usr/bin/g++ g++ /usr/bin/g++-9 --slave /usr/bin/gcov gcov /usr/bin/gcov-9
 
 sudo update-alternatives --config gcc
 
