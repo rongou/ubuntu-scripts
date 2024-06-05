@@ -17,8 +17,8 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 #chmod +x "${HOME}"/src/rmm/runcmake.sh
 
 # For xgboost:
-ln -sf "${DIR}"/xgboost-runcmake.sh "${HOME}"/src/xgboost/runcmake.sh
-chmod +x "${HOME}"/src/xgboost/runcmake.sh
+#ln -sf "${DIR}"/xgboost-runcmake.sh "${HOME}"/src/xgboost/runcmake.sh
+#chmod +x "${HOME}"/src/xgboost/runcmake.sh
 
 # For CUDA setup:
 sudo ln -sf "${DIR}"/etc-profile.d-cuda.sh /etc/profile.d/cuda.sh
