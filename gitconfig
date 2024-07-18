@@ -2,7 +2,8 @@
 	name = Rong Ou
 	email = rong.ou@gmail.com
 [credential]
-	helper = /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
+	credentialStore = cache
+	helper = manager
 [alias]
 	co = checkout
 	br = branch
