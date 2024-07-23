@@ -54,3 +54,17 @@ else
   rm ninja-linux.zip
   popd
 fi
+
+# neovim
+NEOVIM_VERSION=$(nvim --version | grep -Po "(?<=NVIM v)(.*)" || echo "0.0.0")
+echo "neovim installed version: ${NEOVIM_VERSION}"
+NEOVIM_RELEASE=$(wget -qO - https://api.github.com/repos/neovim/neovim/releases/latest | jq -r '.tag_name|sub("^v"; "")')
+echo "neovim latest release: ${NEOVIM_RELEASE}"
+if compare_versions "$NEOVIM_RELEASE" "$NEOVIM_VERSION"; then
+  echo "neovim already is the latest release."
+else
+  echo "Installing new neovim release ${NEOVIM_RELEASE}..."
+  wget -qO -\
+    "https://github.com/neovim/neovim/releases/download/v${NEOVIM_RELEASE}/nvim-linux64.tar.gz"\
+    | tar -xzvf - -C /usr/local --strip-components 1
+fi

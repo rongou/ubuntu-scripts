@@ -1,6 +1,7 @@
 [user]
 	name = Rong Ou
 	email = rong.ou@gmail.com
+	signingkey = 1F59A7247F96B43C
 [credential]
 	credentialStore = cache
 	helper = manager
@@ -17,3 +18,5 @@
 	prompt = false
 [push]
 	autoSetupRemote = true
+[commit]
+	gpgsign = true
