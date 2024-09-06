@@ -1,7 +1,7 @@
 [user]
 	name = Rong Ou
 	email = rong.ou@gmail.com
-	signingkey = 1F59A7247F96B43C
+	signingkey = 5618D01A3A399CB2
 [credential]
 	credentialStore = cache
 	helper = manager
