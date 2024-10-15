@@ -2,6 +2,15 @@
 
 set -e
 
+# Retrieve GitHub authentication token and store it in a variable
+TOKEN=$(gh auth token)
+
+# Check if the token was successfully retrieved
+if [ -z "$TOKEN" ]; then
+    echo "Failed to retrieve GitHub token. Make sure you are logged in using 'gh auth login'."
+    exit 1
+fi
+
 function compare_versions() {
   if [[ $(printf '%s\n' "$1" "$2" | sort -V | head -n1) = "$1" ]]; then
     return 0  # "$1" is less than or equal to "$2"
