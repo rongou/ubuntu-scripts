@@ -4,7 +4,7 @@
 	signingkey = 5618D01A3A399CB2
 [credential]
 	credentialStore = cache
-	helper = manager
+	helper = /usr/local/bin/git-credential-manager
 [alias]
 	co = checkout
 	br = branch
@@ -20,3 +20,5 @@
 	autoSetupRemote = true
 [commit]
 #	gpgsign = true
+[credential "https://dev.azure.com"]
+	useHttpPath = true
