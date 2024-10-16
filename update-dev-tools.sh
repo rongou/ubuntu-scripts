@@ -2,6 +2,8 @@
 
 set -e
 
+micromamba self-update
+
 # Retrieve GitHub authentication token and store it in a variable
 TOKEN=$(gh auth token)
 
