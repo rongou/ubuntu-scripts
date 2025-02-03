@@ -76,6 +76,6 @@ if compare_versions "$NEOVIM_RELEASE" "$NEOVIM_VERSION"; then
 else
   echo "Installing new neovim release ${NEOVIM_RELEASE}..."
   wget -qO -\
-    "https://github.com/neovim/neovim/releases/download/v${NEOVIM_RELEASE}/nvim-linux64.tar.gz"\
+    "https://github.com/neovim/neovim/releases/download/v${NEOVIM_RELEASE}/nvim-linux-x86_64.tar.gz"\
     | tar -xzvf - -C /usr/local --strip-components 1
 fi
